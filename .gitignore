@@ -1,0 +1,7 @@
+node_modules
+
+.build
+.editorconfig
+.nodemonignore
+.npmignore
+.yo-rc.json

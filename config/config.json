@@ -1,0 +1,41 @@
+{
+  "express": {
+    "view engine": "jsx",
+    "view": "require:react-engine/lib/expressView",
+    "views": "./.build/views"
+  },
+  "view engines": {
+    "jsx": {
+      "module": "react-engine/lib/server",
+      "renderer": {
+        "method": "create",
+        "arguments": [
+          {
+            "routes": "require:./.build/routes/index.js",
+            "routesFilePath": "path:./.build/routes/index.js",
+            "reduxStoreInitiator": "path:./.build/store/init.js"
+          }
+        ]
+      }
+    }
+  },
+  "specialization": {},
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": [
+          "path:./.build"
+        ]
+      }
+    },
+    "router": {
+      "module": {
+        "arguments": [
+          {
+            "directory": "path:./controllers"
+          }
+        ]
+      }
+    }
+  }
+}
